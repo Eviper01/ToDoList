@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		224BCD711D83A0FA00579E8E /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BCD701D83A0FA00579E8E /* AddViewController.swift */; };
+		224BCD731D83A4A700579E8E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BCD721D83A4A700579E8E /* TableViewCell.swift */; };
+		224BCD761D83A7D700579E8E /* ToDos+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BCD741D83A7D700579E8E /* ToDos+CoreDataProperties.swift */; };
+		224BCD771D83A7D700579E8E /* ToDos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BCD751D83A7D700579E8E /* ToDos.swift */; };
+		224BCD791D83A80200579E8E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BCD781D83A80200579E8E /* CoreDataManager.swift */; };
 		2277640E1D8263230063F20C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2277640D1D8263230063F20C /* AppDelegate.swift */; };
 		227764101D8263230063F20C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2277640F1D8263230063F20C /* ViewController.swift */; };
 		227764131D8263230063F20C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227764111D8263230063F20C /* Main.storyboard */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		224BCD701D83A0FA00579E8E /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		224BCD721D83A4A700579E8E /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		224BCD741D83A7D700579E8E /* ToDos+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ToDos+CoreDataProperties.swift"; path = "../ToDos+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		224BCD751D83A7D700579E8E /* ToDos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToDos.swift; path = ../ToDos.swift; sourceTree = "<group>"; };
+		224BCD781D83A80200579E8E /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		2277640A1D8263230063F20C /* Working App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Working App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2277640D1D8263230063F20C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2277640F1D8263230063F20C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,13 +66,18 @@
 		2277640C1D8263230063F20C /* Working App */ = {
 			isa = PBXGroup;
 			children = (
+				227764171D8263230063F20C /* Assets.xcassets */,
+				2277641C1D8263230063F20C /* Info.plist */,
+				227764111D8263230063F20C /* Main.storyboard */,
+				227764191D8263230063F20C /* LaunchScreen.storyboard */,
 				2277640D1D8263230063F20C /* AppDelegate.swift */,
 				2277640F1D8263230063F20C /* ViewController.swift */,
-				227764111D8263230063F20C /* Main.storyboard */,
-				227764171D8263230063F20C /* Assets.xcassets */,
-				227764191D8263230063F20C /* LaunchScreen.storyboard */,
-				2277641C1D8263230063F20C /* Info.plist */,
+				224BCD701D83A0FA00579E8E /* AddViewController.swift */,
+				224BCD721D83A4A700579E8E /* TableViewCell.swift */,
 				227764141D8263230063F20C /* Working_App.xcdatamodeld */,
+				224BCD741D83A7D700579E8E /* ToDos+CoreDataProperties.swift */,
+				224BCD751D83A7D700579E8E /* ToDos.swift */,
+				224BCD781D83A80200579E8E /* CoreDataManager.swift */,
 			);
 			path = "Working App";
 			sourceTree = "<group>";
@@ -138,9 +153,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				224BCD731D83A4A700579E8E /* TableViewCell.swift in Sources */,
 				227764101D8263230063F20C /* ViewController.swift in Sources */,
 				227764161D8263230063F20C /* Working_App.xcdatamodeld in Sources */,
+				224BCD771D83A7D700579E8E /* ToDos.swift in Sources */,
+				224BCD711D83A0FA00579E8E /* AddViewController.swift in Sources */,
 				2277640E1D8263230063F20C /* AppDelegate.swift in Sources */,
+				224BCD791D83A80200579E8E /* CoreDataManager.swift in Sources */,
+				224BCD761D83A7D700579E8E /* ToDos+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +312,7 @@
 				227764211D8263230063F20C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
