@@ -14,10 +14,6 @@ class TableViewCell: UITableViewCell {
     @IBOutlet var dueDate: UILabel!
     @IBOutlet var todoDescription: UILabel!
     @IBOutlet var Checkbox: UILabel!
-
-    
-    
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -58,6 +58,27 @@ class CoreDataManager: NSObject {
     }
     
     static func update(todoItem:ToDos) {
+         let ManagedObject = getManagedObject()
+        
+        do {
+            let request  = NSFetchRequest(entityName: "ToDos")
+            request.predicate = NSPredicate(format: "todoItem=%@ and todoDescription=%@ dueDate=%@ and", todoItem.todoItem!,todoItem.todoDescription!, todoItem.dueDate!)
+            let results = try ManagedObject.executeFetchRequest(request)
+            let resultSet = results as! [ToDos]
+            resultSet[0].complete = todoItem.complete
+        }
+        catch {
+            print ("error fetching")
+            
+        }
+        
+        do {
+            try ManagedObject.save()
+        }
+        
+        catch {
+            print ("error updating")
+        }
         
     }
 }

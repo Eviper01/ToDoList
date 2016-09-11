@@ -38,6 +38,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         todos = CoreDataManager.getData("ToDos") as! [ToDos]
         mainTable.reloadData()
     }
+    
+    
+    
+    
+    func formatDate(date:NSDate) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd/MMM"
+        return dateFormatter.stringFromDate(date)
+    }
+    
 
     //MARK: Table Fucntions
     
@@ -52,7 +62,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! TableViewCell
         let todo = todos[indexPath.row]
-        cell.todoItem.text = String(format: "%@: %@: %@", todo.todoItem!, todo.todoDescription!, todo.dueDate!)
+        cell.todoItem.text = String(format: "%@: %@: %@", todo.todoItem!, todo.todoDescription!, formatDate(todo.dueDate!))
         cell.Checkbox.text = "◻️"
         if (todo.complete == true) {
             cell.Checkbox.text = "✅"
@@ -60,6 +70,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    
+    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        if tableView.isEqual(mainTable) {
+            let todo = todos[indexPath.row]
+            let cell = tableView.cellForRowAtIndexPath(indexPath) as! TableViewCell
+            
+            if (cell.Checkbox.text == "✅") {
+                cell.Checkbox.text = "◻️"
+                todo.complete = false
+            }
+            
+            else {
+                cell.Checkbox.text = "✅"
+                todo.complete = true
+                
+            }
+            CoreDataManager.update(todo)
+            
+        }
+        return indexPath
+    }
     
 }

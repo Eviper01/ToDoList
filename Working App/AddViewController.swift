@@ -9,14 +9,18 @@
 import UIKit
 
 class AddViewController: UIViewController, UITextFieldDelegate {
-
-//    @IBOutlet var todoItem: UITextField!
-//    @IBOutlet var todoDescription: UITextView!
-//    @IBOutlet var dueDatePicker: UIDatePicker!
-//    var dueDate:NSDate = NSDate()
     
 
+//These Break the app
+    @IBOutlet var todoItem: UITextField!
+    @IBOutlet var todoDescription: UITextView!
+    @IBOutlet var dueDatePicker: UIDatePicker!
+//They need to be fixed ^
     
+    
+    
+    
+    var dueDate:NSDate = NSDate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,16 +33,16 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-//    @IBAction func doneButton_clicked(sender: AnyObject) {
-//    
-//        CoreDataManager.save(todoItem.text!, todoDescription: todoDescription.text, dueDate: dueDate, complete: false)
-//        todoItem.text = "Task Name"
-//        todoDescription.text = "Description"
-//        
-//        //some animation mumbo jumbo wil go here
-//    }
-//    
-//    
+    @IBAction func doneButton_clicked(sender: AnyObject) {
+    
+        CoreDataManager.save(todoItem.text!, todoDescription: todoDescription.text, dueDate: dueDate, complete: false)
+        todoItem.text = "Task Name"
+        todoDescription.text = "Description"
+        
+        //some animation mumbo jumbo wil go here
+    }
+    
+    
  
     
     
@@ -49,9 +53,9 @@ class AddViewController: UIViewController, UITextFieldDelegate {
  
  
     
-//    @IBAction func datePicker_Changed(sender: AnyObject) {
-//    dueDate = dueDatePicker.date
-//    }
+    @IBAction func datePicker_Changed(sender: AnyObject) {
+    dueDate = dueDatePicker.date
+    }
     
 
     /*
