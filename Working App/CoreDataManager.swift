@@ -9,8 +9,15 @@
 import UIKit
 import CoreData
 
+
+
+
+
+
 class CoreDataManager: NSObject {
     
+
+
     static func getManagedObject() -> NSManagedObjectContext {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         return appDelegate.managedObjectContext
@@ -56,13 +63,45 @@ class CoreDataManager: NSObject {
         }
         
     }
+
+    
+    
+    //delete
+//    ANNNDD it works.
+    static func removeTask(index:Int){
+        
+        let ManagedObject = getManagedObject()
+        
+        do {
+        let fetchRequest = NSFetchRequest(entityName:"ToDos")
+        
+        let todo = try ManagedObject.executeFetchRequest(fetchRequest)
+        ManagedObject.deleteObject(todo[index] as! NSManagedObject)
+        }
+            
+        catch {
+            
+            print ("removeTask: Error Retriving Data")
+            
+        }
+
+        do {
+            try ManagedObject.save()
+        }
+     
+        catch {
+            print("removeTask : error saving or something")
+        }
+    
+        
+            }
     
     static func update(todoItem:ToDos) {
          let ManagedObject = getManagedObject()
         
         do {
             let request  = NSFetchRequest(entityName: "ToDos")
-            request.predicate = NSPredicate(format: "todoItem=%@ and todoDescription=%@ dueDate=%@ and", todoItem.todoItem!,todoItem.todoDescription!, todoItem.dueDate!)
+            request.predicate = NSPredicate(format: "todoItem=%@ and todoDescription=%@ and dueDate=%@", todoItem.todoItem!,todoItem.todoDescription!, todoItem.dueDate!)
             let results = try ManagedObject.executeFetchRequest(request)
             let resultSet = results as! [ToDos]
             resultSet[0].complete = todoItem.complete
@@ -81,4 +120,52 @@ class CoreDataManager: NSObject {
         }
         
     }
+    
+    // To add
+    static func edit(index:Int, todoItem:String, todoDescription:String, dueDate:NSDate, complete:Bool){
+        
+        let ManagedObject = getManagedObject()
+        
+        do {
+            let fetchRequest = NSFetchRequest(entityName:"ToDos")
+            
+            
+            let todo = try ManagedObject.executeFetchRequest(fetchRequest)
+            // It does something here?
+        
+
+            
+
+        }
+            
+        catch {
+            
+            print ("edit: Error Retriving Data")
+            
+        }
+        
+        do {
+            try ManagedObject.save()
+        }
+            
+        catch {
+            print("removeTask : error saving or something")
+        }
+        
+        
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

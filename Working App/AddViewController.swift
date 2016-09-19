@@ -11,11 +11,11 @@ import UIKit
 class AddViewController: UIViewController, UITextFieldDelegate {
     
 
-//These Break the app
+
     @IBOutlet var todoItem: UITextField!
     @IBOutlet var todoDescription: UITextView!
     @IBOutlet var dueDatePicker: UIDatePicker!
-//They need to be fixed ^
+
     
     
     
@@ -24,7 +24,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -39,11 +39,13 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         todoItem.text = "Task Name"
         todoDescription.text = "Description"
         
-        //some animation mumbo jumbo wil go here
     }
     
     
  
+    
+        
+    
     
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -53,8 +55,8 @@ class AddViewController: UIViewController, UITextFieldDelegate {
  
  
     
-    @IBAction func datePicker_Changed(sender: AnyObject) {
-    dueDate = dueDatePicker.date
+    @IBAction func datePicker_Changed(sender: UIDatePicker) {
+        dueDate = sender.date
     }
     
 

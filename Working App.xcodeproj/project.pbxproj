@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220E418E1D86AF0A001F3EC3 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220E418D1D86AF0A001F3EC3 /* EditViewController.swift */; };
 		224BCD711D83A0FA00579E8E /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BCD701D83A0FA00579E8E /* AddViewController.swift */; };
 		224BCD731D83A4A700579E8E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BCD721D83A4A700579E8E /* TableViewCell.swift */; };
 		224BCD761D83A7D700579E8E /* ToDos+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224BCD741D83A7D700579E8E /* ToDos+CoreDataProperties.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		220E418D1D86AF0A001F3EC3 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		224BCD701D83A0FA00579E8E /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		224BCD721D83A4A700579E8E /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		224BCD741D83A7D700579E8E /* ToDos+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ToDos+CoreDataProperties.swift"; path = "../ToDos+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				2277640D1D8263230063F20C /* AppDelegate.swift */,
 				2277640F1D8263230063F20C /* ViewController.swift */,
 				224BCD701D83A0FA00579E8E /* AddViewController.swift */,
+				220E418D1D86AF0A001F3EC3 /* EditViewController.swift */,
 				224BCD721D83A4A700579E8E /* TableViewCell.swift */,
 				227764141D8263230063F20C /* Working_App.xcdatamodeld */,
 				224BCD741D83A7D700579E8E /* ToDos+CoreDataProperties.swift */,
@@ -161,6 +164,7 @@
 				2277640E1D8263230063F20C /* AppDelegate.swift in Sources */,
 				224BCD791D83A80200579E8E /* CoreDataManager.swift in Sources */,
 				224BCD761D83A7D700579E8E /* ToDos+CoreDataProperties.swift in Sources */,
+				220E418E1D86AF0A001F3EC3 /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,6 +13,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var mainTable: UITableView!
     
     var todos:[ToDos] = []
+    var editTodo:ToDos!
+    var tasks = [ToDos]()
+
     
     
     override func viewDidLoad() {
@@ -21,7 +24,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         
+
     }
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -51,6 +58,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     //MARK: Table Fucntions
     
+    
+    
+    //Tabel UI Elements
+    
+//    cell.todoItem
+//    cell.todoDescription
+//    cell.dueDate
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -62,7 +77,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! TableViewCell
         let todo = todos[indexPath.row]
-        cell.todoItem.text = String(format: "%@: %@: %@", todo.todoItem!, todo.todoDescription!, formatDate(todo.dueDate!))
+        
+//        these are config
+        
+//        Wraps the description text
+        cell.todoDescription.numberOfLines = 0
+        
+        
+//        These Handle Updating the cell data
+
+        cell.todoItem.text = String(format: "%@", todo.todoItem!)
+        cell.todoDescription.text = String(format: "%@", todo.todoDescription!)
+        cell.dueDate.text = String(format: "%@", formatDate(todo.dueDate!))
+
+        
         cell.Checkbox.text = "◻️"
         if (todo.complete == true) {
             cell.Checkbox.text = "✅"
@@ -70,9 +98,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+
+    
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
         if tableView.isEqual(mainTable) {
             let todo = todos[indexPath.row]
+            editTodo = todo
             let cell = tableView.cellForRowAtIndexPath(indexPath) as! TableViewCell
             
             if (cell.Checkbox.text == "✅") {
@@ -90,5 +121,43 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         return indexPath
     }
+// This prepaers for the editing view
+    
+    @IBAction func editButton_Clicked() {
+        
+        if (editTodo !== nil) {
+        performSegueWithIdentifier("editClicked", sender: self)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "editClicked" {
+            // add something to prevent this when it is clicked with no selection
+            let otherViewController = segue.destinationViewController as! EditViewController
+            otherViewController.TodoEdit = editTodo
+        }
+    }
+    
+ 
+    
+    // Deleting Items
+    
+
+    
+    //this deletes from the uiview
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! TableViewCell
+        if (editingStyle == UITableViewCellEditingStyle.Delete){
+            todos.removeAtIndex(indexPath.row)
+            CoreDataManager.removeTask(indexPath.row)
+            mainTable.reloadData()
+
+            
+        }
+}
+    
+    
     
 }
