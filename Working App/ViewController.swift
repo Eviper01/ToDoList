@@ -15,6 +15,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var todos:[ToDos] = []
     var editTodo:ToDos!
     var tasks = [ToDos]()
+    var editTodoRow:Int = 0
 
     
     
@@ -104,6 +105,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if tableView.isEqual(mainTable) {
             let todo = todos[indexPath.row]
             editTodo = todo
+            editTodoRow = indexPath.row
             let cell = tableView.cellForRowAtIndexPath(indexPath) as! TableViewCell
             
             if (cell.Checkbox.text == "✅") {
@@ -136,6 +138,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             // add something to prevent this when it is clicked with no selection
             let otherViewController = segue.destinationViewController as! EditViewController
             otherViewController.TodoEdit = editTodo
+            otherViewController.todoRow = editTodoRow
         }
     }
     

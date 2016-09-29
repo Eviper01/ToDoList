@@ -11,9 +11,6 @@ import CoreData
 
 
 
-
-
-
 class CoreDataManager: NSObject {
     
 
@@ -121,20 +118,23 @@ class CoreDataManager: NSObject {
         
     }
     
-    // To add
-    static func edit(index:Int, todoItem:String, todoDescription:String, dueDate:NSDate, complete:Bool){
+    // The Editing function
+    static func edit(index:Int, todoItemNew:String, todoDescriptionNew:String, dueDateNew:NSDate){
         
         let ManagedObject = getManagedObject()
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         do {
             let fetchRequest = NSFetchRequest(entityName:"ToDos")
-            
-            
-            let todo = try ManagedObject.executeFetchRequest(fetchRequest)
-            // It does something here?
-        
-
-            
+            fetchRequest.predicate = NSPredicate(format: "todoItem=%@ and todoDescription=%@ and dueDate=%@", todoItemNew, todoDescriptionNew, dueDateNew)
+            let results = try ManagedObject.executeFetchRequest(fetchRequest)
+           
+            let resultSet = results as! [ToDos]
+            resultSet[index].todoItem = todoItemNew
+//            ManagedObject.setValue(todoItemNew, forKey: "todoItem")
+//            ManagedObject.setValue(todoDescriptionNew, forKey: "todoDescription")
+//            ManagedObject.setValue(dueDateNew, forKey: "dueDate")
+//        
 
         }
             
@@ -145,6 +145,7 @@ class CoreDataManager: NSObject {
         }
         
         do {
+            // It crashes when it does this - THe index parameter is not used I need to use it for somtheing - A Predicate?
             try ManagedObject.save()
         }
             
@@ -157,8 +158,7 @@ class CoreDataManager: NSObject {
 
     
     
-    
-    
+
     
     
     

@@ -16,6 +16,7 @@ class EditViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var dueDatePicker: UIDatePicker!
     
     
+    var todoRow:Int = 0
     var TodoEdit: ToDos!
 
     var dueDate:NSDate = NSDate()
@@ -49,7 +50,7 @@ class EditViewController: UIViewController, UITextFieldDelegate {
         //this needs to actually manipulate the cordata - .save() will have to be changed or a new func created ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 //        Important
         
-        CoreDataManager.save(todoItem.text!, todoDescription: todoDescription.text, dueDate: dueDate, complete: false)
+        CoreDataManager.edit(todoRow, todoItemNew: todoItem.text!, todoDescriptionNew: todoDescription.text, dueDateNew: dueDate)
         
         
     }
