@@ -21,15 +21,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65v-pg-a1j">
                                 <rect key="frame" x="0.0" y="509" width="600" height="91"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1I6-i1-5fn">
-                                        <rect key="frame" x="10" y="31" width="30" height="30"/>
-                                        <state key="normal" title="Edit">
-                                            <color key="titleColor" red="0.44705882352941173" green="0.96470588235294119" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="editButton_Clicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="50o-FB-8a0"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSD-0c-AFn">
                                         <rect key="frame" x="560" y="31" width="30" height="30"/>
                                         <state key="normal" title="Add">
@@ -42,12 +33,9 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="1I6-i1-5fn" firstAttribute="top" secondItem="65v-pg-a1j" secondAttribute="top" constant="31" id="0RO-VU-l27"/>
                                     <constraint firstAttribute="bottom" secondItem="DSD-0c-AFn" secondAttribute="bottom" constant="30" id="3Rm-uv-hxz"/>
                                     <constraint firstItem="DSD-0c-AFn" firstAttribute="top" secondItem="65v-pg-a1j" secondAttribute="top" constant="31" id="F93-Wg-n4m"/>
                                     <constraint firstAttribute="trailing" secondItem="DSD-0c-AFn" secondAttribute="trailing" constant="10" id="Zcf-5I-94t"/>
-                                    <constraint firstItem="1I6-i1-5fn" firstAttribute="leading" secondItem="65v-pg-a1j" secondAttribute="leading" constant="10" id="ZfH-8k-7h5"/>
-                                    <constraint firstAttribute="bottom" secondItem="1I6-i1-5fn" secondAttribute="bottom" constant="30" id="lg9-xN-DIE"/>
                                     <constraint firstAttribute="height" constant="91" id="qLg-4K-gfE"/>
                                 </constraints>
                             </view>

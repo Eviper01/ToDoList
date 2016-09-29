@@ -119,6 +119,9 @@ class CoreDataManager: NSObject {
     }
     
     // The Editing function
+    
+    /*
+    
     static func edit(index:Int, todoItemNew:String, todoDescriptionNew:String, dueDateNew:NSDate){
         
         let ManagedObject = getManagedObject()
@@ -157,7 +160,7 @@ class CoreDataManager: NSObject {
     }
 
     
-    
+    */
 
     
     
