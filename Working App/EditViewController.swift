@@ -15,13 +15,10 @@ class EditViewController: UIViewController {
     @IBOutlet var todoDescription: UILabel!
     @IBOutlet var dueDatePicker: UILabel!
     
+     var TodoEdit:ToDos!
+ 
     
-    var todoRow:Int = 0
-    //This
-    var TodoEdit: ToDos!
 
-    var dueDate:NSDate = NSDate()
-    
     
     
     func formatDate(date:NSDate) -> String {
@@ -40,7 +37,7 @@ class EditViewController: UIViewController {
        
         todoItem.text = String(format: "%@", TodoEdit.todoItem!)
         todoDescription.text = String(format: "%@", TodoEdit.todoDescription!)
-        dueDatePicker.text = formatDate(dueDate)
+        dueDatePicker.text = formatDate(TodoEdit.dueDate!)
             
 
 
