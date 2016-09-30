@@ -11,21 +11,22 @@ class EditViewController: UIViewController {
     
     
    
-    @IBOutlet var todoItem: UILabel!
-    @IBOutlet var todoDescription: UILabel!
-    @IBOutlet var dueDatePicker: UILabel!
+
     
      var TodoEdit:ToDos!
  
+    @IBOutlet var todoItemLabel: UILabel!
     
+    @IBOutlet var todoDescriptionLabel: UILabel!
 
     
+    @IBOutlet var dueDateLabel: UILabel!
     
-    func formatDate(date:NSDate) -> String {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd/MMM"
-        return dateFormatter.stringFromDate(date)
-    }
+//    func formatDate(date:NSDate) -> String {
+//        let dateFormatter = NSDateFormatter()
+//        dateFormatter.dateFormat = "dd/MMM"
+//        return dateFormatter.stringFromDate(date)
+//    }
     
     
     
@@ -35,10 +36,11 @@ class EditViewController: UIViewController {
         
         // Do any additional setup after loading the view.
        
-        todoItem.text = String(format: "%@", TodoEdit.todoItem!)
-        todoDescription.text = String(format: "%@", TodoEdit.todoDescription!)
-        dueDatePicker.text = formatDate(TodoEdit.dueDate!)
-            
+        todoItemLabel.text = String(format: "%@", TodoEdit.todoItem!)
+        todoDescriptionLabel.text = String(format: "%@", TodoEdit.todoDescription!)
+        dueDateLabel.text = String(format: "%@", TodoEdit.todoDescription!)
+//            formatDate(TodoEdit.dueDate!)
+        
 
 
     }
@@ -50,8 +52,7 @@ class EditViewController: UIViewController {
     
     
     
-    
-    
+
     
     
 

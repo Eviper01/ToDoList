@@ -431,10 +431,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="dueDateLabel" destination="pne-gO-MmD" id="xcH-m6-fBT"/>
-                        <outlet property="dueDatePicker" destination="pne-gO-MmD" id="9am-3t-SgU"/>
+                        <outlet property="dueDateLabel" destination="pne-gO-MmD" id="u5a-3K-TO8"/>
                         <outlet property="todoDescription" destination="HJK-3J-TZk" id="LmR-TW-0l9"/>
+                        <outlet property="todoDescriptionLabel" destination="HJK-3J-TZk" id="rUf-x4-WNt"/>
                         <outlet property="todoItem" destination="Hue-AW-qAY" id="yrz-Hb-H9S"/>
+                        <outlet property="todoItemLabel" destination="Hue-AW-qAY" id="iQy-zQ-cw9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCP-ud-C5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
