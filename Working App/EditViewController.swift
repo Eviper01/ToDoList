@@ -7,36 +7,42 @@
 //
 import UIKit
 
-class EditViewController: UIViewController, UITextFieldDelegate {
+class EditViewController: UIViewController {
     
     
    
-    @IBOutlet var todoItem: UITextField!
-    @IBOutlet var todoDescription: UITextView!
-    @IBOutlet var dueDatePicker: UIDatePicker!
+    @IBOutlet var todoItem: UILabel!
+    @IBOutlet var todoDescription: UILabel!
+    @IBOutlet var dueDatePicker: UILabel!
     
     
     var todoRow:Int = 0
+    //This
     var TodoEdit: ToDos!
 
     var dueDate:NSDate = NSDate()
+    
+    
+    
+    func formatDate(date:NSDate) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd/MMM"
+        return dateFormatter.stringFromDate(date)
+    }
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        if (TodoEdit !== nil) {
+       
         todoItem.text = String(format: "%@", TodoEdit.todoItem!)
         todoDescription.text = String(format: "%@", TodoEdit.todoDescription!)
-        dueDatePicker.date = TodoEdit.dueDate!
+        dueDatePicker.text = formatDate(dueDate)
             
-            
-            
-        }
-        
-//        else {
-//            performSegueWithIdentifier("editDone", sender: self)
-//        }
+
 
     }
     
@@ -45,35 +51,14 @@ class EditViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func doneButton_clicked(sender: AnyObject) {
-        
-        //this needs to actually manipulate the cordata - .save() will have to be changed or a new func created ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-//        Important
-//        
-//        CoreDataManager.edit(todoRow, todoItemNew: todoItem.text!, todoDescriptionNew: todoDescription.text, dueDateNew: dueDate)
-        
-        
-    }
-    
-    
-    
-    // Add the func deleteButton_clicked {it deletes things}
     
     
     
     
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return false
-    }
     
-    
-    
-    @IBAction func datePicker_Changed(sender: UIDatePicker) {
-        dueDate = sender.date
-    }
-    
+
+
     
     /*
      // MARK: - Navigation
