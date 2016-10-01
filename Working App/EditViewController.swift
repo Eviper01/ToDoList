@@ -24,7 +24,7 @@ class EditViewController: UIViewController {
     
     func formatDate(date:NSDate) -> String {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd/MMM"
+        dateFormatter.dateFormat = "dd/MMM/yyyy"
         return dateFormatter.stringFromDate(date)
     }
     
